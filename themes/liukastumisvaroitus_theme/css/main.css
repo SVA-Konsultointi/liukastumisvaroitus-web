@@ -1,0 +1,49 @@
+#front-page-search {
+    padding: 20px 0 10px 0;
+}
+
+footer {
+    background: url(../img/dashed-line.png) repeat-x;
+    padding-top: 20px;
+}
+
+.glyph-link {
+    color: black;
+}
+
+.glyph-link:hover {
+    color: black;
+}
+
+.box-shadow {
+    box-shadow: 0 1px 5px #999999;
+}
+
+#wrapper {
+    box-shadow: 0 1px 10px #999999;
+    margin-bottom: 40px;
+    margin-top: 10px;
+    background-color: #F8F8F8;
+}
+
+body {
+    background: white url(../img/bg-pattern.jpg) repeat-x;
+}
+
+.tipGallery img {
+    margin-bottom: 10px;
+    height: auto;
+    display: inline-block;
+    max-width: 100%;
+    padding: 4px;
+    line-height: 1.42857143;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: all .2s ease-in-out;
+}
+
+.warningsTable tr td {
+    padding: 5px;
+    width: 120px;
+}
