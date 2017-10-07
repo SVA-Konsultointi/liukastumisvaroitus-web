@@ -16,7 +16,7 @@ class Warnings
 
         $json = curl_exec($curl);
 
-        $this->output = json_decode($json);
+        $this->output = json_decode($json, true);
 
         curl_close($curl);
     }
