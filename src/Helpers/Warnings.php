@@ -10,7 +10,7 @@ class Warnings
 
     public function __construct()
     {
-        $curl = curl_init('http://46.101.247.197/api/v1/warnings');
+        $curl = curl_init('http://46.101.247.197/api/v1/warnings?order=created_at:desc');
 
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
@@ -75,17 +75,19 @@ EOF;
     private function printPanes($distinctYears, $warnings)
     {
         $html = '';
+        $active = 'active';
 
         foreach ($distinctYears as $start) {
             $end = $start + 1;
 
             $html .= <<<EOF
-<div class="tab-pane fade in active" id="$end">
+<div class="tab-pane fade in {$active}" id="$end">
     <table class="table table-striped table-hover">
         {$this->printRows($warnings[$start])}
     </table>
 </div>
 EOF;
+            $active = '';
         }
 
         return $html;
@@ -113,13 +115,15 @@ EOF;
     private function printTabs($distinctYears)
     {
         $html = '';
+        $active = 'active';
 
         foreach ($distinctYears as $start) {
             $end = $start + 1;
 
             $html .= <<<EOF
-<li class="active"><a href="#$end" data-toggle="tab">$start - $end</a></li>
+<li class="{$active}"><a href="#$end" data-toggle="tab">$start - $end</a></li>
 EOF;
+            $active = '';
         }
 
         return $html;
@@ -136,17 +140,17 @@ EOF;
     <td>
         <script>
             var found = false;
-            
+
             $("table:first tr").each(function() {
                 var city = $(this).find("td:eq(0)").html();
                 var city2 = "$city";
-            
+
                 if(city === city2) {
                     document.write($(this).find("td:eq(1)").html() * $count);
                     found = true;
                 }
             });
-            
+
             if(!found) {
                 document.write($count);
             }
