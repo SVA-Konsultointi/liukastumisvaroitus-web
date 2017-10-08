@@ -8,7 +8,7 @@ use \Concrete\Core\Package\Package;
 use \Concrete\Core\Page\Template;
 use \Concrete\Theme\Concrete\PageTheme;
 
-class controller extends Package
+class Controller extends Package
 {
     protected $pkgHandle = 'liukastumisvaroitus';
     protected $appVersionRequired = '8.2.0';
