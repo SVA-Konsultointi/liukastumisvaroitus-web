@@ -11,7 +11,7 @@ defined('C5_EXECUTE') or die('Access Denied.');
         <div class="row">
           <div class="col-md-6">
             <p>
-              <?= 'Liukastumisvaroitus ' . date('Y') ?>
+              <?= '© Liukkausvaroitus tekstiviestillä, palvelu jalankulkijoille ' . date('Y') ?>
 			  <a class="glyph-link" href="/index.php/login">
                 <span class="glyphicon glyphicon-lock"></span>
               </a>
