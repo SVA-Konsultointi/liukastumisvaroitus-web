@@ -47,6 +47,15 @@ if ($language === 'fi') {
           $logo->display($c);
           ?>
         </div>
+
+        <div class="col-md-6">
+          <div class="pull-right">
+            <?php
+            $languages = new \Concrete\Core\Area\GlobalArea('Languages');
+            $languages->display($c);
+            ?>
+          </div>
+        </div>
       </div>
 
       <header>
