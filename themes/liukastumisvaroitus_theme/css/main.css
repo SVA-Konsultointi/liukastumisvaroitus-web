@@ -62,3 +62,7 @@ body {
 .ccm-image-slider-text h2 {
     font-size: 48px;
 }
+
+.ccm-block-switch-language option {
+    text-transform: capitalize;
+}
