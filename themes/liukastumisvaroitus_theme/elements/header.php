@@ -41,15 +41,15 @@ if ($language === 'fi') {
   <body>
     <div id="wrapper" class="container">
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-9">
           <?php
           $logo = new \Concrete\Core\Area\GlobalArea("Logo$language");
           $logo->display($c);
           ?>
         </div>
 
-        <div class="col-md-6">
-          <div class="pull-right">
+        <div class="col-md-3">
+          <div class="pull-right" style="margin-top: 20px;">
             <?php
             $languages = new \Concrete\Core\Area\GlobalArea('Languages');
             $languages->display($c);
