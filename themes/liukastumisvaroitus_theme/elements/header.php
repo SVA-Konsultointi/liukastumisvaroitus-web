@@ -7,6 +7,14 @@ defined('C5_EXECUTE') or die('Access Denied.');
  * @var \Concrete\Core\Page\Page $c
  */
 
+$language = \Concrete\Core\Localization\Localization::activeLanguage();
+
+if ($language === 'fi') {
+    $language = '';
+} else {
+    $language = " $language";
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="fi">
@@ -35,7 +43,7 @@ defined('C5_EXECUTE') or die('Access Denied.');
       <div class="row">
         <div class="col-md-6">
           <?php
-          $logo = new \Concrete\Core\Area\GlobalArea('Logo');
+          $logo = new \Concrete\Core\Area\GlobalArea("Logo$language");
           $logo->display($c);
           ?>
         </div>
@@ -58,7 +66,7 @@ defined('C5_EXECUTE') or die('Access Denied.');
         <div class="row">
           <div class="col-md-12">
             <?php
-            $header = new \Concrete\Core\Area\GlobalArea('Header');
+            $header = new \Concrete\Core\Area\GlobalArea("Header$language");
             $header->display($c);
             ?>
           </div>
