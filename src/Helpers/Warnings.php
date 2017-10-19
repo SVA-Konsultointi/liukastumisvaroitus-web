@@ -50,7 +50,12 @@ EOF;
         $warnings = [];
 
         foreach ($this->output as $item) {
-            $year = date_create_from_format('Y-m-d H:i:s', $item['created_at'])->format('Y');
+            $date = date_create_from_format('Y-m-d H:i:s', $item['created_at']);
+            $year = $date->format('Y');
+
+            if ($date->format('m') < 6) {
+                $year--;
+            }
 
             if (!array_key_exists($year, $warnings)) {
                 $warnings[$year] = [];
